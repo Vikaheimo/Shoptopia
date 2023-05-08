@@ -7,7 +7,7 @@ dotenv.config()
 
 const app = express()
 const port = process.env.PORT
-const db = initMongoDB()
+initMongoDB()
 
 app.use(express.json())
 app.use('/', requestLogger)
