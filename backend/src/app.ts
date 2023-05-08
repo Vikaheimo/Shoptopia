@@ -9,8 +9,9 @@ const app = express()
 const port = process.env.PORT
 const db = initMongoDB()
 
-app.use('/api', router())
+app.use(express.json())
 app.use('/', requestLogger)
+app.use('/api', router())
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)
