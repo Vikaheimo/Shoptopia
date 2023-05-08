@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2017",
     "lib": ["es5", "es6", "dom"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "module": "commonjs",
+    "module": "node16",
     "moduleResolution": "node",
     "baseUrl": "src/",
     "typeRoots": ["./src/types", "./node_modules/@types"],
