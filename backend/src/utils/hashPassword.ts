@@ -9,31 +9,23 @@ if (PEPPER.byteLength === 0) {
 /**
  * Hashes a given password
  * @param password password to hash
- * @returns hashed password if the hashing was successful, otherwise null
+ * @returns hashed password if the hashing was successful
  */
 export const hashPassword = async (password: string) => {
-    try {
-        const hash = await argon2.hash(password, { secret: PEPPER })
-        return hash
-    } catch (err) {
-        return null
-    }
+    const hash = await argon2.hash(password, { secret: PEPPER })
+    return hash
 }
 
 /**
  * Checks a given password against given string.
  * @param password password to check
  * @param hash hash to check against
- * @returns true if the password and hash match, false if they don't and null if the check failed
+ * @returns true if the password and hash match, false if they don't
  */
 export const passwordMatchesHash = async (password: string, hash: string) => {
-    try {
-        if (await argon2.verify(hash, password, { secret: PEPPER })) {
-            return true
-        } else {
-            return false
-        }
-    } catch (err) {
-        return null
+    if (await argon2.verify(hash, password, { secret: PEPPER })) {
+        return true
+    } else {
+        return false
     }
 }

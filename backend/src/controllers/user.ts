@@ -14,3 +14,7 @@ export const createUser = async (name: string, email: string, password: string) 
 export const findUser = async (query: UserQuery) => {
     return await User.find(query)
 }
+
+export const findOneUser = async (query: UserQuery) => {
+    return await User.findOne(query)
+}
