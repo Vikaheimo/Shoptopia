@@ -1,4 +1,4 @@
-import mongoose, { createConnection } from 'mongoose'
+import mongoose from 'mongoose'
 
 const MS_IN_SECOND = 1000
 const TIMEOUT = MS_IN_SECOND * 5
