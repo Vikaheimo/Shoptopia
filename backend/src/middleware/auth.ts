@@ -6,15 +6,15 @@ import { getSubjectJWT } from '../utils/jwtHandler'
  */
 export default () => async (req: Request, res: Response, next: NextFunction) => {
     try {
-        let bearer = req.headers.bearer
+        const bearer = req.headers.bearer
         if (!bearer || typeof bearer === 'object' || !getSubjectJWT(bearer)) {
-            res.status(401).json({error: "Authorization error"})
+            res.status(401).json({ error: 'Authorization error' })
             return
-        } 
+        }
         next()
     } catch (error) {
         res.status(500).json({
-            error: "Internal server error"
+            error: 'Internal server error'
         })
     }
 }
