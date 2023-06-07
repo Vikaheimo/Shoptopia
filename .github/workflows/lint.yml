@@ -17,19 +17,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: |
-        cd frontend
-        npm ci
-        npm run lint
+      - run:
+        - cd frontend
+        - npm ci
+        - npm run lint
+
   backend-lint:
     name: Lint Frontend
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - run: |
-        cd backend
-        npm ci
-        npm run lint
+      - run:
+        - cd backend
+        - npm ci
+        - npm run lint
   
 
